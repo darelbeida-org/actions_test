@@ -1,4 +1,6 @@
 on: [push]
+env:
+  QQ: ABC
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
@@ -7,6 +9,10 @@ jobs:
       - name: hello world
         run: echo "Hello world Actions!"
       - run: pwd
+      - uses: actions/upload-artifact@v2
+        with:
+          name: QQ
+          path: ${{ABC}}/*
   container_job:
     runs-on: ubuntu-latest
     container: debian:buster-slim
