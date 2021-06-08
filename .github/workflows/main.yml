@@ -1,5 +1,5 @@
 on: [push]
-env:
+defaults:
   QQ: ABC
 jobs:
   hello_world_job:
@@ -12,10 +12,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: QQ1
-          path: $QQ/*
+          path: ${{defaults.QQ}}/*
   container_job:
     runs-on: ubuntu-latest
     container: debian:buster-slim
+    needs: hello_world_job
     steps:
       - run: echo "Inside docker."
       - name: Download codes
