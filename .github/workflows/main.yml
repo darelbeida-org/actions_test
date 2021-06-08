@@ -7,18 +7,12 @@ jobs:
       - name: hello world
         run: echo "Hello world Actions!"
       - run: pwd
-      - run: ls -l
-      - name: Download codes
-        uses: actions/checkout@v2
-      - run: cd ${{ github.workspace }} && pwd && ls -l
   container_job:
     runs-on: ubuntu-latest
     container: debian:buster-slim
     steps:
       - run: echo "Inside docker."
-      - run: ls && pwd
-      - run: cd ~ && pwd && ls -l
-      - run: cd /github/home && ls -l
-      - run: pwd
-      - run: cd /__w/ && ls -l
-      - run: cd /__w/_temp && ls -l
+      - name: Download codes
+        uses: actions/checkout@v2
+      - run: ls -l && pwd
+      - run: cd ${{ github.workspace }} && pwd && ls -l
