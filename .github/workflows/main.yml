@@ -15,4 +15,6 @@ jobs:
       - name: Download codes
         uses: actions/checkout@v2
       - run: ls -l && pwd
+      - run: export PYTHONPATH="ABCDE"
       - run: cd ${{ github.workspace }} && pwd && ls -l
+      - run: echo $PYTHONPATH
