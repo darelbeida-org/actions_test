@@ -12,3 +12,6 @@ jobs:
     steps:
       - run: echo "Inside docker."
       - run: ls && pwd
+      - run: cd ~ && pwd && ls -l
+      - run: cd /github/home && ls -l
+      - run: pwd
