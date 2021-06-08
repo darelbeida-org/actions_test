@@ -11,3 +11,4 @@ jobs:
     container: debian:buster-slim
     steps:
       - run: echo "Inside docker."
+      - run: ls && pwd
