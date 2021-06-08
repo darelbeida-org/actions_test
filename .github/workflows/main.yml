@@ -9,6 +9,7 @@ jobs:
       - name: hello world
         run: echo "Hello world Actions!"
       - run: pwd
+      - uses: actions/checkout@v2
       - uses: actions/upload-artifact@v2
         with:
           name: QQ1
@@ -24,3 +25,8 @@ jobs:
       - run: ls -l && pwd
       - run: export PYTHONPATH="ABCDE"
       - run: echo $PYTHONPATH
+      - uses: actions/download-artifact@v2
+        with:
+          name: QQ1
+          path: DEF/
+      - run: ls -l DEF/
