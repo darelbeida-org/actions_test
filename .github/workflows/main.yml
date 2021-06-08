@@ -1,5 +1,5 @@
 on: [push]
-defaults:
+env:
   QQ: ABC
 jobs:
   hello_world_job:
@@ -12,7 +12,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: QQ1
-          path: ${{QQ}}/*
+          path: ${{env.QQ}}/*
   container_job:
     runs-on: ubuntu-latest
     container: debian:buster-slim
