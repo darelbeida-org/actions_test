@@ -1,0 +1,8 @@
+on: [push]
+jobs:
+  hello_world_job:
+    rons-on: ubuntu-latest
+    name: Job to test Actions
+    steps:
+      - name: hello world
+        run: echo "Hello world Actions!"
