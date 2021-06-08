@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: hello world
         run: echo "Hello world Actions!"
+      - run: pwd
   container_job:
     runs-on: ubuntu-latest
     container: debian:buster-slim
@@ -15,3 +16,5 @@ jobs:
       - run: cd ~ && pwd && ls -l
       - run: cd /github/home && ls -l
       - run: pwd
+      - run: cd /__w/ && ls -l
+      - run: cd /__w/_temp && ls -l
