@@ -11,8 +11,8 @@ jobs:
       - run: pwd
       - uses: actions/upload-artifact@v2
         with:
-          name: QQ
-          path: ${{QQ}}/*
+          name: QQ1
+          path: ${QQ}/*
   container_job:
     runs-on: ubuntu-latest
     container: debian:buster-slim
