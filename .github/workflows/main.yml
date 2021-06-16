@@ -1,13 +1,15 @@
-on: [push]
+on: [push,pull_request]
 env:
   QQ: ABC
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     name: Job to test Actions
+    env:
+      PAT: ${{ secrets.PAT }}
     steps:
       - name: hello world
-        run: echo "Hello world Actions!"
+        run: echo $PAT
       - run: pwd
       - uses: actions/checkout@v2
       - uses: actions/upload-artifact@v2
@@ -18,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     container: debian:buster-slim
     needs: hello_world_job
+    if: false
     steps:
       - run: echo "Inside docker."
       - name: Download codes
