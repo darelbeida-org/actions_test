@@ -30,5 +30,4 @@ jobs:
       - name: Download
         uses: actions/checkout@v2
       - name: Docker test
-        run: docker run --workdir /ABACUS -v ${{ github.workspace }}/actions_test:/ABACUS darelbeida/test_debian10_gnu_runtime:latest cd /ABACUS && ls -l
-        
+        run: docker run --rm --workdir /ABACUS --entrypoint /bin/bash entrypoint.sh -v ${{ github.workspace }}/actions_test:/ABACUS darelbeida/test_debian10_gnu_runtime:latest
