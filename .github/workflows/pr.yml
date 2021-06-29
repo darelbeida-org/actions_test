@@ -22,7 +22,7 @@ jobs:
           push: true
           tags: localhost:5000/darelbeida/test_debian10_gnu:latest
           cache-from: type=registry,ref=ghcr.io/darelbeida/test_debian10_gnu:latest
-          cache-to: type=register,ref=localhost:5000/darelbeida/test_debian10_gnu:latest
+          cache-to: type=inline
       - name: Build and push 2
         id: docker_build_2
         uses: docker/build-push-action@v2
@@ -31,4 +31,4 @@ jobs:
           push: true
           tags: localhost:5000/darelbeida/test_debian10_gnu_runtime:latest
           cache-from: type=registry,ref=ghcr.io/darelbeida/test_debian10_gnu:latest
-          cache-to: type=register,ref=localhost:5000/darelbeida/test_debian10_gnu_runtime:latest
+          cache-to: type=inline
