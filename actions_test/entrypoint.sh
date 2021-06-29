@@ -1,1 +1,0 @@
-echo "WRONG DIR"
