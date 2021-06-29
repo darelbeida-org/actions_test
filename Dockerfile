@@ -12,3 +12,7 @@ RUN cd /tmp \
     && tar xf cmake-3.18.4.tar.gz cmake-3.18.4/ && cd cmake-3.18.4 \
     && ./configure && make -j4 && make install \
     && cd /tmp && rm -rf cmake-3.18.4
+
+FROM first_stage AS second_stage
+
+RUN cmake --version
