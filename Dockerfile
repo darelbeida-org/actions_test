@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:buster-slim AS first_stage
 
 LABEL org.opencontainers.image.source https://github.com/darelbeida/actions_test
 
