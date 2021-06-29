@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 jobs:
   build_dockerfile:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          push: true
-          tags: ghcr.io/darelbeida/test_debian10_gnu:latest
+		  load: true
+          tags: test_debian10_gnu:latest
           cache-from: type=registry,ref=ghcr.io/darelbeida/test_debian10_gnu:latest
           cache-to: type=inline
