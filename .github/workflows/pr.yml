@@ -27,3 +27,8 @@ jobs:
           tags: darelbeida/test_debian10_gnu_runtime:latest
           cache-from: type=registry,ref=darelbeida/test_debian10_gnu:latest
           cache-to: type=inline
+      - name: Download
+        uses: actions/checkout@v2
+      - name: Docker test
+        run: docker run --workdir /ABACUS -v ${{ github.workspace }}/actions_test:/ABACUS darelbeida/test_debian10_gnu_runtime:latest cd /ABACUS && ls -l
+        
