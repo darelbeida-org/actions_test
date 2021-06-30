@@ -2,7 +2,7 @@ FROM debian:buster-slim AS first_stage
 
 LABEL org.opencontainers.image.source https://github.com/darelbeida/actions_test
 
-RUN apt-get update && apt-get install -y --no-install-recommends git gfortran libboost-dev libssl-dev make ssh vim wget \
+RUN apt-get update && apt-get install -y --no-install-recommends bc git gfortran libboost-dev libssl-dev make ssh vim wget \
     && apt-get install -y --no-install-recommends mpich libmpich-dev
 
 ENV GIT_SSL_NO_VERIFY 1
